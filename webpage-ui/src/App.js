@@ -1,22 +1,24 @@
-import axios from 'axios';
+import { BrowserRouter as Router,Switch, Route, Link } from 'react-router-dom';
 
+import Home from "./components/home";
+import Login from "./components/login";
+import UserPage from "./components/user-page"
+import Logout from "./components/logout"
 
-function App(params) {
-    axios.get('api/user', {
-        headers: {
-            'Authorization': `Bearer .eyJpZCI6MiwiZXhwIjoxNjI1MzY2MTY3fQ.IZAaF4qJCIeLNKmm0H2q-pnqqorPI9oxJi6qAL6PnoA`
-        }
-    }).then((res) => {
-        // на случай успеха
-        console.log(res.data.user) 
-    }).catch((error) => {
-        // на случай ошибки(отсуствия токена)
-        console.error(error)
-    })
-    return (
-        <div className="App">
-        </div>
-      );
+function App() {
+  return (
+    <div className="App">
+      <Router>
+        <Link to={{ pathname: `/`, fromDashBoard: false}}>Home</Link>
+        <Switch>
+          <Route path='/logout' exact component={Logout}></Route>
+          <Route path='/login' exact component={Login}></Route>
+          <Route path='/lk' exact component={UserPage}></Route>
+          <Route path='/' exact component={Home}></Route>
+        </Switch>
+      </Router>
+    </div>
+  );
 }
 
 export default App;
