@@ -26,7 +26,10 @@ function UserBar() {
         }).catch((error) => {
             // на случай ошибки(отсуствия токена)
             setUser(
-                <Link to={{ pathname: `login`, fromDashBoard: false}}>Login</Link>
+                <div className="logChoose">
+                    <Link to={{ pathname: `/login`, fromDashBoard: false}}>Login</Link>
+                    <Link to={{ pathname: `/reg`, fromDashBoard: false}}>Registration</Link>
+                </div>
             );
         })
     }, [])
