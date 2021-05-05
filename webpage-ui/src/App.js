@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import axios from 'axios';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+function App(params) {
+    axios.get('api/user', {
+        headers: {
+            'Authorization': `Bearer .eyJpZCI6MiwiZXhwIjoxNjI1MzY2MTY3fQ.IZAaF4qJCIeLNKmm0H2q-pnqqorPI9oxJi6qAL6PnoA`
+        }
+    }).then((res) => {
+        // на случай успеха
+        console.log(res.data.user) 
+    }).catch((error) => {
+        // на случай ошибки(отсуствия токена)
+        console.error(error)
+    })
+    return (
+        <div className="App">
+        </div>
+      );
 }
 
 export default App;
