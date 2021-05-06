@@ -11,7 +11,7 @@ function NavBar() {
             <Link to={{ pathname: `/`, fromDashBoard: false }} className="navElement">
                 <img className="NavIcon Logo" src={Logo} alt='Главная страница' title="На главную" />
             </Link>
-            <Link to={{ pathname: ``, fromDashBoard: false }} className="navElement">
+            <Link to={{ pathname: `/lessons`, fromDashBoard: false }} className="navElement">
                 <img className="NavIcon Icon" src={Lessons} alt='Мастер классы' title="Мастер класы" />
             </Link>
             <Link to={{ pathname: ``, fromDashBoard: false }} className="navElement">

@@ -43,6 +43,9 @@ class User(AbstractBaseUser, PermissionsMixin):
     is_staff = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    subs = models.ForeignKey("webpage.MasterClass", blank=True, null=True, on_delete=models.CASCADE)
+    groups = models.ForeignKey("webpage.Group", blank=True,null=True, on_delete=models.CASCADE)
+
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['name', 'surname']
