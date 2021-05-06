@@ -8,7 +8,7 @@ import './styles/navbar.css';
 function NavBar() {
     return (
         <nav>
-            <Link to={{ pathname: ``, fromDashBoard: false }} className="navElement">
+            <Link to={{ pathname: `/`, fromDashBoard: false }} className="navElement">
                 <img className="NavIcon Logo" src={Logo} alt='Главная страница' title="На главную" />
             </Link>
             <Link to={{ pathname: ``, fromDashBoard: false }} className="navElement">

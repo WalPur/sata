@@ -11,7 +11,8 @@ class Registration extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            username: '',
+            name: '',
+            surname: '',
             email: '',
             password: '',
             fireRedirect: false
@@ -61,10 +62,14 @@ class Registration extends React.Component {
                 <form onSubmit={this.handleSubmit}>
                     <label>
                         Имя:
-                        <input type="text" name="username" value={this.state.username} onChange={this.handleChange} />
+                        <input type="text" name="name" value={this.state.name} onChange={this.handleChange} />
                     </label>
                     <label>
-                        Почта:
+                        Фамилия:
+                        <input type="text" name="surname" value={this.state.surname} onChange={this.handleChange} />
+                    </label>
+                    <label>
+                        E-mail:
                         <input type="email" name="email" value={this.state.email} onChange={this.handleChange} />
                     </label>
                     <label>Пароль:

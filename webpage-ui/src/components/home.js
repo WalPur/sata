@@ -1,6 +1,7 @@
 import UserBar from "./user-bar";
 import NavBar from './navbar';
 import './styles/header.css';
+import './styles/main.css'
 
 function home() {
     return (
@@ -9,7 +10,9 @@ function home() {
                 <NavBar />
                 <UserBar />
             </header>
-            <h1>Welcome!</h1>
+            <div className="wrapper">
+                <h1 className='welcome'>Добро пожаловать!</h1>
+            </div>
         </div>
       );
 }

@@ -3,17 +3,21 @@ import axios from 'axios';
 import UserBar from "./user-bar";
 import NavBar from './navbar';
 import './styles/header.css';
+import Cookies from 'universal-cookie';
 
 
 function UserPage() {
     const [user, setUser] = useState(``);
+    const cookies = new Cookies();
+    const token = cookies.get('token');
     useEffect(() => {
         axios.get('/api/user', {
             headers: {
-                'Authorization': `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwiZXhwIjoxNjI1Mzk1MTk5fQ.hnk_8xGlIcIPBewxKr4jbHBePohgOlbdg-WZcFFYcdY`
+                'Authorization': `Bearer ${token}`
             }
         }).then((res) => {
             // на случай успеха
+            cookies.set('token', res.data.user.token, { path: '/' });
             setUser(res.data.user)
         }).catch((error) => {
             // на случай ошибки(отсуствия токена)
@@ -21,12 +25,13 @@ function UserPage() {
         })
     }, [])
     return (
-        <div className="userBar">
+        <div className="userPage">
             <header>
                 <NavBar />
                 <UserBar />
             </header>
-            <p>Username: {user.username}</p>
+            <p>Имя: {user.name}</p>
+            <p>Фамилия: {user.surname}</p>
             <p>Email: {user.email}</p>
         </div>
       );
