@@ -10,7 +10,6 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Link to={{ pathname: `/`, fromDashBoard: false}}>Home</Link>
         <Switch>
           <Route path='/reg' exact component={Registration}></Route>
           <Route path='/logout' exact component={Logout}></Route>

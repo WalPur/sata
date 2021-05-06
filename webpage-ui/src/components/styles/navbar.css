@@ -1,0 +1,27 @@
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 75%;
+    height: 256px;
+}
+.navElement {
+    display: block;
+}
+/* .navElement {
+    margin-left: 140px;
+}
+.navElement:last-child {
+    margin-left: 0;
+    margin-right: 140px;
+} */
+.NavIcon {
+    height: auto;
+    max-width: 100%;
+    width: 150px;
+}
+.Icon {
+    border-radius: 50%;
+    background: #C59E7F;
+}

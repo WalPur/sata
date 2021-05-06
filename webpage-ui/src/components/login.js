@@ -2,6 +2,9 @@ import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import Cookies from 'universal-cookie';
 import { Redirect } from "react-router";
+import UserBar from "./user-bar";
+import NavBar from './navbar';
+import './styles/header.css';
 
 
 class Login extends React.Component {
@@ -44,19 +47,25 @@ class Login extends React.Component {
     render() {
         const { fireRedirect } = this.state
         return (
-            <form onSubmit={this.handleSubmit}>
-                <label>
-                    Почта:
-                    <input type="email" name="email" value={this.state.email} onChange={this.handleChange} />
-                </label>
-                <label>Пароль:
-                    <input type="password" name="password" value={this.state.password} onChange={this.handleChange} />
-                </label>
-                <input type="submit" value="Отправить" />
-                {fireRedirect && (
-                    <Redirect to={'/'} />
-                )}
-            </form>
+            <div className="login">
+                <header>
+                    <NavBar />
+                    <UserBar />
+                </header>
+                <form onSubmit={this.handleSubmit}>
+                    <label>
+                        Почта:
+                        <input type="email" name="email" value={this.state.email} onChange={this.handleChange} />
+                    </label>
+                    <label>Пароль:
+                        <input type="password" name="password" value={this.state.password} onChange={this.handleChange} />
+                    </label>
+                    <input type="submit" value="Отправить" />
+                    {fireRedirect && (
+                        <Redirect to={'/'} />
+                    )}
+                </form>
+            </div>
         )
     };
 }

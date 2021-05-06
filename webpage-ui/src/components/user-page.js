@@ -1,6 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import UserBar from "./user-bar";
+import NavBar from './navbar';
+import './styles/header.css';
 
 
 function UserPage() {
@@ -20,7 +22,10 @@ function UserPage() {
     }, [])
     return (
         <div className="userBar">
-            <UserBar />
+            <header>
+                <NavBar />
+                <UserBar />
+            </header>
             <p>Username: {user.username}</p>
             <p>Email: {user.email}</p>
         </div>
