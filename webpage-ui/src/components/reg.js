@@ -5,6 +5,8 @@ import { Redirect } from "react-router";
 import UserBar from "./user-bar";
 import NavBar from './navbar';
 import './styles/header.css';
+import './styles/main.css';
+import './styles/form.css';
 
 
 class Registration extends React.Component {
@@ -33,10 +35,11 @@ class Registration extends React.Component {
     handleSubmit(event) {
         event.preventDefault();
         axios.post('/api/users/', {
-            user: {
-                username: this.state.username,
-                email: this.state.email,
-                password: this.state.password
+            "user": {
+                "name": this.state.name,
+                "surname": this.state.surname,
+                "email": this.state.email,
+                "password": this.state.password
             },
             headers: {
                 'Content-Type': 'application/json'
@@ -59,27 +62,29 @@ class Registration extends React.Component {
                     <NavBar />
                     <UserBar />
                 </header>
-                <form onSubmit={this.handleSubmit}>
-                    <label>
-                        Имя:
-                        <input type="text" name="name" value={this.state.name} onChange={this.handleChange} />
-                    </label>
-                    <label>
-                        Фамилия:
-                        <input type="text" name="surname" value={this.state.surname} onChange={this.handleChange} />
-                    </label>
-                    <label>
-                        E-mail:
-                        <input type="email" name="email" value={this.state.email} onChange={this.handleChange} />
-                    </label>
-                    <label>Пароль:
-                        <input type="password" name="password" value={this.state.password} onChange={this.handleChange} />
-                    </label>
-                    <input type="submit" value="Отправить" />
-                    {fireRedirect && (
-                        <Redirect to={'/'} />
-                    )}
-                </form>
+                <div className="wrapper">
+                    <form onSubmit={this.handleSubmit}>
+                        <label>
+                            Имя:
+                            <input class="textInput" type="text" name="name" value={this.state.name} onChange={this.handleChange} />
+                        </label>
+                        <label>
+                            Фамилия:
+                            <input class="textInput" type="text" name="surname" value={this.state.surname} onChange={this.handleChange} />
+                        </label>
+                        <label>
+                            E-mail:
+                            <input class="textInput" type="email" name="email" value={this.state.email} onChange={this.handleChange} />
+                        </label>
+                        <label>Пароль:
+                            <input class="textInput" type="password" name="password" value={this.state.password} onChange={this.handleChange} />
+                        </label>
+                        <input className="submitButton" type="submit" value="Вход" />
+                        {fireRedirect && (
+                            <Redirect to={'/'} />
+                        )}
+                    </form>
+                </div>
             </div>
         )
     };

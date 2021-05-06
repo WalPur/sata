@@ -1,0 +1,31 @@
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+label {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    font-size: 18px;
+}
+.textInput {
+    height: 30px;
+    background: #EBBD99;
+    color: #847162;
+    border-radius: 58px;
+    border: none;
+    padding: 10px 15px;
+    font-size: 20px;
+}
+.submitButton {
+    background: #EBBD99;
+    color: #847162;
+    border: none;
+    padding: 10px 45px;
+    margin: 15px;
+}
+.toRegPage {
+    text-decoration-color: white;
+    color: white;
+}

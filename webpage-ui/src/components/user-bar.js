@@ -17,10 +17,10 @@ function UserBar() {
             // на случай успеха
             cookies.set('token', res.data.user.token, { path: '/' });
             setUser(
-                <div className="userInfo">
-                    <Link to={{ pathname: `/lk`, fromDashBoard: false}}>`{res.data.user.name} {res.data.user.surname}`</Link>
-                    <Link to={{ pathname: `/logout`, fromDashBoard: false }}><button>Logout</button></Link>
-                </div>
+                <Link className="userInfo" to={{ pathname: `/lk`, fromDashBoard: false}}>
+                    <img className="Avatar" src={res.data.user.avatar} alt='Ваш аватар' />
+                    <span className="userName">{res.data.user.name} {res.data.user.surname}</span>
+                </Link>
             )
         }).catch((error) => {
             // на случай ошибки(отсуствия токена)

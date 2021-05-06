@@ -24,7 +24,9 @@ body {
     margin: 100px auto;
     background: #3F7162;
     color: white;
+    padding: 30px 10px;
 }
 .welcome {
     text-align: center;
+    margin: 0;
 }

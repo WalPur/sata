@@ -3,7 +3,9 @@ import axios from 'axios';
 import UserBar from "./user-bar";
 import NavBar from './navbar';
 import './styles/header.css';
+import './styles/main.css';
 import Cookies from 'universal-cookie';
+import { Link } from 'react-router-dom';
 
 
 function UserPage() {
@@ -30,9 +32,13 @@ function UserPage() {
                 <NavBar />
                 <UserBar />
             </header>
-            <p>Имя: {user.name}</p>
+            <div className="wrapper">
+                <h1 className='welcome'>Личный кабинет</h1>
+                <p>Имя: {user.name}</p>
             <p>Фамилия: {user.surname}</p>
             <p>Email: {user.email}</p>
+            <Link to={{ pathname: `/logout`, fromDashBoard: false }}><button>Logout</button></Link>
+            </div>
         </div>
       );
 }

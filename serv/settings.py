@@ -125,6 +125,9 @@ STATICFILES_DIRS = (
     (BASE_DIR / 'webpage-ui/build/static'),
 )
 
+MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_URL = '/media/'
+
 AUTH_USER_MODEL = 'authentication.User'
 
 REST_FRAMEWORK = {
