@@ -8,12 +8,14 @@ import Registration from "./components/reg";
 import Lessons from "./components/master";
 import Market from "./components/market";
 import Chat from "./components/chat";
+import Patch from './components/patch'
 
 function App() {
   return (
     <div className="App">
       <Router>
         <Switch>
+          <Route path='/patch' exact component={Patch}></Route>
           <Route path='/chat' exact component={Chat}></Route>
           <Route path='/market' exact component={Market}></Route>
           <Route path='/lessons' exact component={Lessons}></Route>

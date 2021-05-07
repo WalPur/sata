@@ -34,10 +34,12 @@ function UserPage() {
             </header>
             <div className="wrapper">
                 <h1 className='welcome'>Личный кабинет</h1>
+                <img className="Avatar" src={user.avatar} alt='Ваш аватар' />
                 <p>Имя: {user.name}</p>
-            <p>Фамилия: {user.surname}</p>
-            <p>Email: {user.email}</p>
-            <Link to={{ pathname: `/logout`, fromDashBoard: false }}><button>Logout</button></Link>
+                <p>Фамилия: {user.surname}</p>
+                <p>Email: {user.email}</p>
+                <Link to={{ pathname: `/logout`, fromDashBoard: false }}><button>Выйти</button></Link>
+                <Link to={{ pathname: `/patch`, fromDashBoard: false }}><button>Изменить данные</button></Link>
             </div>
         </div>
       );
