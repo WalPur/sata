@@ -5,6 +5,13 @@ class MasterClass(models.Model):
     name = models.CharField(max_length=255)
     creator = models.ForeignKey("authentication.User", on_delete=models.CASCADE)
 
+class Topic(models.Model):
+    question = models.TextField()
+
+class Message(models.Model):
+    text = models.TextField()
+    q = models.ForeignKey("Topic", on_delete=models.CASCADE)
+
 class Group(models.Model):
     name = models.CharField(max_length=255)
     creator = models.ForeignKey("authentication.User", on_delete=models.CASCADE)
@@ -12,6 +19,5 @@ class Group(models.Model):
 
 class lot(models.Model):
     name = models.CharField(max_length=255)
-    creator = models.ForeignKey("authentication.User", on_delete=models.CASCADE)
-    image = models.ImageField(upload_to="lots")
+    image = models.ImageField(upload_to="lots", blank=True)
     cost = models.IntegerField()

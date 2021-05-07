@@ -14,10 +14,10 @@ function NavBar() {
             <Link to={{ pathname: `/lessons`, fromDashBoard: false }} className="navElement">
                 <img className="NavIcon Icon" src={Lessons} alt='Мастер классы' title="Мастер класы" />
             </Link>
-            <Link to={{ pathname: ``, fromDashBoard: false }} className="navElement">
+            <Link to={{ pathname: `/chat`, fromDashBoard: false }} className="navElement">
                 <img className="NavIcon Icon" src={Chat} alt='Чат' title="Чат" />
             </Link>
-            <Link to={{ pathname: ``, fromDashBoard: false }} className="navElement">
+            <Link to={{ pathname: `/market`, fromDashBoard: false }} className="navElement">
                 <img className="NavIcon Icon" src={Market} alt='' title="" />
             </Link>
         </nav>

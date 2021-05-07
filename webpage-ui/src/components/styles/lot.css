@@ -1,0 +1,33 @@
+.lots {
+    display: flex;
+    flex-direction: column;
+    margin: 50px 0;
+}
+.lot {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.lotInfo {
+    display: flex;
+}
+.lotImage {
+    height: auto;
+    max-width: 100%;
+    width: 140px;
+    border-radius: 50px;
+}
+.lotDesc {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.buy {
+    width: 200px;
+    height: 50px;
+    border-radius: 25px;
+    background: #C59E7F;
+    color: white;
+    border: none;
+}

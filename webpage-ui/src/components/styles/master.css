@@ -1,0 +1,21 @@
+.Lessons {
+    margin: 0 100px;
+}
+.Lesson {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+.lessonName {
+    font-size: 24px;
+}
+.enlistButton {
+    background: #EBBD99;
+    border-radius: 30px;
+    width: 250px;
+    height: 45px;
+    font-size: 24px;
+    border: none;
+    cursor: pointer;
+}

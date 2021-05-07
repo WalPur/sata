@@ -4,6 +4,7 @@ import UserBar from "./user-bar";
 import NavBar from './navbar';
 import './styles/header.css';
 import './styles/main.css';
+import './styles/master.css';
 
 function Lessons() {
     const [lesson, setLesson] = useState([]);
@@ -24,7 +25,7 @@ function Lessons() {
                 <div className="Lessons">
                     {lesson.map( l => (
                         <div className="Lesson">
-                            <span className="lessonName">l.name</span>
+                            <span className="lessonName">{l.name}</span>
                             <button className="enlistButton">Записаться</button>
                         </div>
                     ))}
