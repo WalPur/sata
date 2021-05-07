@@ -33,4 +33,9 @@ body {
     text-align: center;
     margin: 0;
     font-family: 'PT Serif', serif;
+    font-size: 40px;
+}
+.welcomeText {
+    font-size: 20px;
+    line-height: 1.5;
 }

@@ -4,5 +4,6 @@ from .views import *
 
 app_name = 'webpage'
 urlpatterns = [
-    path('', index)
+    path('', index),
+    path('chat', index)
 ]
